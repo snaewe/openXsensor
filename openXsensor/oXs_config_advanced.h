@@ -37,7 +37,7 @@
 //define FILL_TEST_3_WITH_EXPECTED_ALT                        // uncomment this line if oXs has to calculate an expected Alt in the future based on current Alt, Vspeed and vertical Acc
 //#define EXPECTED_ALT_AT_SEC 0.2                               // time (in sec) for expected Alt (this line must be uncommented wen previous is uncommented
 
-//#define FILL_TEST_1_2_3_WITH_LINEAR_ACC                     // uncomment this line if oXs has to fill TEST_1, TEST_2, TEST_3 with linear Acc
+#define FILL_TEST_1_2_3_WITH_LINEAR_ACC                     // uncomment this line if oXs has to fill TEST_1, TEST_2, TEST_3 with linear Acc
 
 //#define FILL_TEST_1_2_WITH_VSPEED_AND_ALT_FROM_SECOND_VARIO  // uncomment to activate this option
 
@@ -49,7 +49,7 @@
 
 //#define FILL_TEST1_WITH_HEADING_FROM_MAGNETOMETER              // uncomment to activate this option
 
-#define FILL_TEST_1_2_3_WITH_FLOW_SENSOR_CONSUMPTION             // uncomment to activate this option
+//#define FILL_TEST_1_2_3_WITH_FLOW_SENSOR_CONSUMPTION             // uncomment to activate this option
 
 // --------- 3 - PPM settings ---------
 //#define PIN_PPM           2     // Uncomment this line in order to use a Rx channel to control oXs; default is 2 but my own device use 3
@@ -66,7 +66,7 @@
 // ***** 4.2 - Type of Vspeed to transmit  *****             Is defined only in oXs_config_basic.h file                       
 
 // ***** 4.3 - Sensitivity predefined by program *****
-#define SENSITIVITY_MIN 80          // normal value for MS5611; for BMP, it is probably better to use a lower value like 20
+#define SENSITIVITY_MIN 20          // normal value for MS5611; for BMP, it is probably better to use a lower value like 20
 #define SENSITIVITY_MAX 300
 #define SENSITIVITY_MIN_AT 100
 #define SENSITIVITY_MAX_AT 1000
@@ -83,7 +83,7 @@
 
 // ***** 4.6 - Vertical speeds calculations based on PPM *****
 #define VARIO_PRIMARY       FIRST_BARO          // select between FIRST_BARO, SECOND_BARO , AVERAGE_FIRST_SECOND, AIRSPEED_COMPENSATED , BARO_AND_IMU
-#define VARIO_SECONDARY     AIRSPEED_COMPENSATED          // select between FIRST_BARO, SECOND_BARO , AVERAGE_FIRST_SECOND, AIRSPEED_COMPENSATED , BARO_AND_IMU
+#define VARIO_SECONDARY     BARO_AND_IMU          // select between FIRST_BARO, SECOND_BARO , AVERAGE_FIRST_SECOND, AIRSPEED_COMPENSATED , BARO_AND_IMU
 #define SWITCH_VARIO_MIN_AT_PPM 10
 #define SWITCH_VARIO_MAX_AT_PPM 90
 
@@ -200,9 +200,9 @@
 #define FLOW_SENSOR_RESET_AT_PPM         95                   // when absolute value of ppm is greater than this, flow counter is reset.
 
 // --------- 20 - Sequencer ---------
-//#define SEQUENCE_OUTPUTS 0b100000  
-#define SEQUENCE_UNIT 2
-#define SEQUENCE_m100    1 , 0b100000 , 3 , 0b000000 , 1 , 0b100000 , 3 , 0b000000 
+#define SEQUENCE_OUTPUTS 0b000011  
+#define SEQUENCE_UNIT 50
+#define SEQUENCE_m100    1 , 0b000011 , 3 , 0b000000 , 1 , 0b000011 , 3 , 0b000000 
 //#define SEQUENCE_m75     1 , 0b100000 , 1 , 0b000000 , 2 , 0b100000 , 2 , 0b000000
 //#define SEQUENCE_m50     5 , 0b100000 , 5 , 0b000000
 //#define SEQUENCE_m25     5 , 0b100000 , 5 , 0b000000 , 0 , 0b100000
