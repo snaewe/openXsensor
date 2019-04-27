@@ -20,7 +20,7 @@
 #define OXS_CONFIG_BASIC_h
 
 // --------- 1 - Telemetry protocol ---------  
-#define PROTOCOL  FRSKY_SPORT   // select between FRSKY_SPORT , FRSKY_HUB , FRSKY_SPORT_HUB , MULTIPLEX , HOTT, JETI
+#define PROTOCOL  FRSKY_SPORT    // select between FRSKY_SPORT , FRSKY_HUB , FRSKY_SPORT_HUB , MULTIPLEX , HOTT, JETI
 
 // ***** 1.1 - Pin connected to Rx ************                              See oXs_config_advanced.h (normally no need to change it) (default is arduino pin 4 connected to RX) 
 // ***** 1.2 - SPORT_SENSOR_ID (used only for Frsky Sport protocol)  *****   See oXs_config_advanced.h (normally no need to change it) 
@@ -31,9 +31,9 @@
 //#define FUEL_SOURCE   ADS_VOLT_1                 // select between VOLT_1, VOLT_2, VOLT_3 , VOLT_4, VOLT_5 , VOLT_6, ADS_VOLT_1, ADS_VOLT_2, ADS_VOLT_3, ADS_VOLT_4
 //#define A3_SOURCE     ADS_VOLT_1                 // select between VOLT_1, VOLT_2, VOLT_3 , VOLT_4, VOLT_5 , VOLT_6, ADS_VOLT_1, ADS_VOLT_2, ADS_VOLT_3, ADS_VOLT_4
 //#define A4_SOURCE     ADS_VOLT_3                 // select between VOLT_1, VOLT_2, VOLT_3 , VOLT_4, VOLT_5 , VOLT_6, ADS_VOLT_1, ADS_VOLT_2, ADS_VOLT_3, ADS_VOLT_4
-#define ACCX_SOURCE     TEST_1                   //  select between TEST_1, TEST_2, TEST_3, GLIDER_RATIO , SECONDS_SINCE_T0 ,AVERAGE_VSPEED_SINCE_TO , VOLT_1, VOLT_2, VOLT_3, VOLT_4, VOLT_5, VOLT_6, PITCH, ROLL , YAW, ADS_VOLT_1, ADS_VOLT_2, ADS_VOLT_3, ADS_VOLT_4 
-#define ACCY_SOURCE     TEST_2                 //  select between TEST_1, TEST_2, TEST_3, GLIDER_RATIO , SECONDS_SINCE_T0 ,AVERAGE_VSPEED_SINCE_TO , VOLT_1, VOLT_2, VOLT_3, VOLT_4, VOLT_5, VOLT_6, PITCH, ROLL , YAW, ADS_VOLT_1, ADS_VOLT_2, ADS_VOLT_3, ADS_VOLT_4
-#define ACCZ_SOURCE     TEST_3                 //  select between TEST_1, TEST_2, TEST_3, GLIDER_RATIO , SECONDS_SINCE_T0 ,AVERAGE_VSPEED_SINCE_TO , VOLT_1, VOLT_2, VOLT_3, VOLT_4, VOLT_5, VOLT_6, PITCH, ROLL , YAW, ADS_VOLT_1, ADS_VOLT_2, ADS_VOLT_3, ADS_VOLT_4
+//#define ACCX_SOURCE     TEST_1                   //  select between TEST_1, TEST_2, TEST_3, GLIDER_RATIO , SECONDS_SINCE_T0 ,AVERAGE_VSPEED_SINCE_TO , VOLT_1, VOLT_2, VOLT_3, VOLT_4, VOLT_5, VOLT_6, PITCH, ROLL , YAW, ADS_VOLT_1, ADS_VOLT_2, ADS_VOLT_3, ADS_VOLT_4 
+//#define ACCY_SOURCE     TEST_2                 //  select between TEST_1, TEST_2, TEST_3, GLIDER_RATIO , SECONDS_SINCE_T0 ,AVERAGE_VSPEED_SINCE_TO , VOLT_1, VOLT_2, VOLT_3, VOLT_4, VOLT_5, VOLT_6, PITCH, ROLL , YAW, ADS_VOLT_1, ADS_VOLT_2, ADS_VOLT_3, ADS_VOLT_4
+//#define ACCZ_SOURCE     TEST_3                 //  select between TEST_1, TEST_2, TEST_3, GLIDER_RATIO , SECONDS_SINCE_T0 ,AVERAGE_VSPEED_SINCE_TO , VOLT_1, VOLT_2, VOLT_3, VOLT_4, VOLT_5, VOLT_6, PITCH, ROLL , YAW, ADS_VOLT_1, ADS_VOLT_2, ADS_VOLT_3, ADS_VOLT_4
 //#define T1_SOURCE       TEST_1                   //  select between TEST_1, TEST_2, TEST_3 , GLIDER_RATIO , SECONDS_SINCE_T0 ,AVERAGE_VSPEED_SINCE_TO , SENSITIVITY, PPM, VOLT_1, VOLT_2, VOLT_3, VOLT_4, VOLT_5, VOLT_6, ADS_VOLT_1, ADS_VOLT_2, ADS_VOLT_3, ADS_VOLT_4
 //#define T2_SOURCE       TEST_2                    //  select between TEST_1, TEST_2, TEST_3, , GLIDER_RATIO, SECONDS_SINCE_T0 ,AVERAGE_VSPEED_SINCE_TO , SENSITIVITY, PPM, VOLT_1, VOLT_2, VOLT_3, VOLT_4, VOLT_5, VOLT_6, ADS_VOLT_1, ADS_VOLT_2, ADS_VOLT_3, ADS_VOLT_4
 
@@ -51,12 +51,12 @@
                         6 , VERTICAL_SPEED , 1 , 1 , 0, -500 , 500  , \
                         7 , ALTIMETER_MAX , 1 , 1 , 0 , -16384 , 16383 
                         // 8 , VOLT_1 , 1, 1 , 0 , -16384 , 16383
-                        // 6 , CURRENTMA , 1 , 1, 0 , -16384 , 16383 ,\
+                        // 6 , CURRENTMA , 1 , 1, 0 , -16384 , 16383 ,
                         // 7 , MILLIAH  , 1 , 1, 0 , -16384 , 16383
-                        // 7 , CELL_TOT , 1 , 1 , 0 , -16384 , 16383 , \
-                        // 4 , VOLT_4 , 1 , 1 , 0 , -16384 , 16383 , \
+                        // 7 , CELL_TOT , 1 , 1 , 0 , -16384 , 16383 ,
+                        // 4 , VOLT_4 , 1 , 1 , 0 , -16384 , 16383 ,
                         // 9 , PPM , 1 , 1 , 0 , -16384 , 16383 
-                        // 3 , ALTIMETER , 1 , 1 , 0 , -16384 , 16383 , \
+                        // 3 , ALTIMETER , 1 , 1 , 0 , -16384 , 16383 ,
 
 // ***** 2.4 - Jeti data *****
 #define VOLTAGE_SOURCE   VOLT_1                     // select between VOLT_1, VOLT_2, VOLT_3 , VOLT_4, VOLT_5 , VOLT_6
@@ -68,7 +68,7 @@
 
 // --------- 4 - Vario settings ---------
 // ***** 4.1 - Connecting 1 or 2 barometric sensor(s)  ***** 
-#define FIRST_BARO_SENSOR_USE   BMP180       // select between NO_BARO , MS5611, GY86 , BMP085 , BMP180 , GY87,  BMP280  
+#define FIRST_BARO_SENSOR_USE   NO_BARO       // select between NO_BARO , MS5611, GY86 , BMP085 , BMP180 , GY87,  BMP280  
                                               // Note : when used, second sensor is to define in oXs_config_advanced.h
                                               
 // ***** 4.2 - Type of Vspeed to transmit  *****                                    
@@ -88,7 +88,7 @@
 // ***** 6.1 - Voltage Reference to measure voltages and current *****              see oXs_config_advanced.h when voltage reference is not Vcc and 5 volt
 
 // ***** 6.2 - Voltage parameters *****                                             see oXs_config_advanced.h for additionnal parameters when YES
-#define ARDUINO_MEASURES_VOLTAGES   NO                                        //   select between YES , NO (When NO, following line is discarded)
+#define ARDUINO_MEASURES_VOLTAGES   YES                                        //   select between YES , NO (When NO, following line is discarded)
 
 // ***** 6.3 - Max number of Lipo cells to measure (and transmit to Tx) *****
 #define NUMBEROFCELLS 0                                                 // Put this line as comment or set value to 0 (zero) if you do not want to transmit cell voltages.
@@ -112,7 +112,7 @@
 
 // --------- 10 - IMU 6050 --- (accelerometer + gyro)  and HMC5883 (magnetometer) --  see oXs_config_advanced.h for additionnal parameters e.g. about calibration
 // ***** 10.1 - IMU 6050 *****
-#define A_MPU6050_IS_CONNECTED      YES              // select between YES , NO
+#define A_MPU6050_IS_CONNECTED      NO              // select between YES , NO
 
 // ***** 10.2 - HMC5883 *****
 #define CALCULATE_YAW_WITH_HMC5883   NO             // select between YES , NO ; YES requires that A_MPU6050_IS_CONNECTED is YES here above
@@ -124,5 +124,3 @@
 
 
 #endif// End define OXS_CONFIG_BASIC_h
-
-

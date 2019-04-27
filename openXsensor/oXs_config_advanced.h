@@ -17,7 +17,7 @@
 // --------- 1 - Telemetry protocol ---------  Protocol is defined in oXs_config_basic.h file
 
 // ****** 1.1 - Pin connected to Rx ********
-#define PIN_SERIALTX      4                 // The pin which transmits the serial data to the telemetry receiver, Usually pin 4 (otherwise pin 2)
+#define PIN_SERIALTX      2                 // The pin which transmits the serial data to the telemetry receiver, Usually pin 4 (otherwise pin 2)
 
 // ***** 1.2 - SPORT_SENSOR_ID used (only for Frsky Sport protocol)  *****   See list of available values in oXs_config_descripion.h 
 #define         DATA_ID_VARIO  0x00  // = sensor 0 used for Alt and Vspeed
@@ -37,7 +37,7 @@
 //define FILL_TEST_3_WITH_EXPECTED_ALT                        // uncomment this line if oXs has to calculate an expected Alt in the future based on current Alt, Vspeed and vertical Acc
 //#define EXPECTED_ALT_AT_SEC 0.2                               // time (in sec) for expected Alt (this line must be uncommented wen previous is uncommented
 
-#define FILL_TEST_1_2_3_WITH_LINEAR_ACC                     // uncomment this line if oXs has to fill TEST_1, TEST_2, TEST_3 with linear Acc
+//#define FILL_TEST_1_2_3_WITH_LINEAR_ACC                     // uncomment this line if oXs has to fill TEST_1, TEST_2, TEST_3 with linear Acc
 
 //#define FILL_TEST_1_2_WITH_VSPEED_AND_ALT_FROM_SECOND_VARIO  // uncomment to activate this option
 
@@ -56,7 +56,7 @@
 #define PPM_MIN_100       988     // default 1500 - 512 ; // pulse width (usec) when TX sends a channel = -100
 #define PPM_PLUS_100      2012    // default 1500 + 512 ; // pulse width (usec) when TX sends a channel = +100
 
-//#define PPM_VIA_SPORT             // uncomment this line to get ppm data over SPORT protocol instead of from a PWM channel (it requires a Tx with openTx running LUA script)
+#define PPM_VIA_SPORT             // uncomment this line to get ppm data over SPORT protocol instead of from a PWM channel (it requires a Tx with openTx running LUA script)
 
 // --------- 4 - Vario settings ---------    Type of baro is defined in oXs_config_basic.h file
 
@@ -113,15 +113,15 @@
 // --------- 6 - Voltages & Current sensor settings ---------
 
 // ***** 6.1 - Voltage Reference to measure voltages and current *****
-#define USE_INTERNAL_REFERENCE  // uncomment this line if you use 1.1 volt internal reference instead of Vcc (voltage divider mst be used to reduce voltages to 1.1 volt max)
+//#define USE_INTERNAL_REFERENCE  // uncomment this line if you use 1.1 volt internal reference instead of Vcc (voltage divider mst be used to reduce voltages to 1.1 volt max)
 //#define USE_EXTERNAL_REFERENCE  // uncomment this line if you use an external reference instead of Vcc
 //#define REFERENCE_VOLTAGE 4970    // set value in milliVolt; if commented, oXs will use or 1100 (if internal ref is used) or 5000 (if internal ref is not used) 
 
 // ***** 6.2 - Voltage parameters *****
 // Each of following lines contains 6 parameters, the first value is for VOLT_1, the second for VOLT_2, ... up to the sixth for VOLT_6 
-#define PIN_VOLTAGE        6  , 8     , 8   , 8    , 8   , 8               //  Fill 6 values; set to 0 up to 7 for analog pins A0 up to A7 ; set the value to 8 for the voltage(s) not to be measured.
-#define RESISTOR_TO_GROUND  2.95 , 10    , 10  , 10 , 0  , 18               // set value to 0 when no divider is used for a voltage; can contains decimals 
-#define RESISTOR_TO_VOLTAGE 46.9 , 8.7 , 22 , 27  , 0 , 47              // set value to 0 when no divider is used for a voltage; can contains decimals 
+#define PIN_VOLTAGE        3  , 8     , 8   , 8    , 8   , 8               //  Fill 6 values; set to 0 up to 7 for analog pins A0 up to A7 ; set the value to 8 for the voltage(s) not to be measured.
+#define RESISTOR_TO_GROUND  1000.0 , 0    , 0  , 0 , 0  , 0               // set value to 0 when no divider is used for a voltage; can contains decimals 
+#define RESISTOR_TO_VOLTAGE 3295.0 , 0 , 0 , 0  , 0 , 0              // set value to 0 when no divider is used for a voltage; can contains decimals 
 #define OFFSET_VOLTAGE      0   , 0     , 0    , 0    , 0   , 0                // optionnal, can be negative, must be integer, in principe in mv
 #define SCALE_VOLTAGE       1.00 , 1.0   , 1.0  , 1.0  , 1.0 , 1.0              // optionnal, can be negative, can have decimals
 
@@ -147,7 +147,7 @@
 #define RESISTOR_TO_CURRENT_SENSOR      0   // put as comment or set to 0 if no divider is used (e.g  39   for 1.1 internal ref)
 
 // ***** 6.6 - Ads1115 parameters  *****
-#define ADS_MEASURE A0_TO_A1 ,  ADS_OFF , ADS_OFF , ADS_OFF // select 4 values between A0_TO_A1, A0_TO_A3, A1_TO_A3, A2_TO_A3, A0_TO_GND, A1_TO_GND, A2_TO_GND, A3_TO_GND, ADS_OFF
+#define ADS_MEASURE ADS_OFF ,  ADS_OFF , ADS_OFF , ADS_OFF // select 4 values between A0_TO_A1, A0_TO_A3, A1_TO_A3, A2_TO_A3, A0_TO_GND, A1_TO_GND, A2_TO_GND, A3_TO_GND, ADS_OFF
 #define ADS_FULL_SCALE_VOLT  MV2048, MV4096, MV6144, MV4096 //  select between MV6144 MV4096 MV2048 MV1024 MV512 MV256
 #define ADS_OFFSET 0, 0 , 0 , 0 // must be an integer (positive or negative)
 #define ADS_SCALE 1, 1, 1, 1 // can be a float
@@ -163,13 +163,13 @@
 //#define PIN_PUSHBUTTON    2   // default is 10 but my own device is 2
 
 // --------- 9 - GPS ------------------------------------------------------------------------------------------------
-//#define GPS_SPEED_IN_KMH  // uncomment this line if GPS speed has to be sent in km/h instead of knot/h (only for Frsky protocol)
-#define GPS_SPEED_3D      // uncomment this line if GPS speed has to be the 3d speed instead of the 2d speed (note: 3d is probably less accurate - to test) 
+#define GPS_SPEED_IN_KMH  // uncomment this line if GPS speed has to be sent in km/h instead of knot/h (only for Frsky protocol)
+//#define GPS_SPEED_3D      // uncomment this line if GPS speed has to be the 3d speed instead of the 2d speed (note: 3d is probably less accurate - to test) 
 #define GPS_REFRESH_RATE  5      // rate at which GPS sent new data; select between 1, 5 or 10 (Hz). Default = 5 Hz; Ublox NEO6 does not support 10 hz  
 
 // --------- 10 - IMU 6050 --- (accelerometer + gyro) and HMC5883 (magnetometer) --------------------------------------
 // ***** 10.1 - IMU 6050 *****
-#define PIN_INT_6050 2   // Interrupt from 6050 has to be connected to Arduino pin 2 or pin 3 (do not use here the same pin as PPM)
+#define PIN_INT_6050 3   // Interrupt from 6050 has to be connected to Arduino pin 2 or pin 3 (do not use here the same pin as PPM)
 
 //#define DISPLAY_ACC_OFFSET // used ONLY in order to display the acceleration offset on pc terminal; KEEP AS COMMENT once offsets have been setup 
 
@@ -200,7 +200,7 @@
 #define FLOW_SENSOR_RESET_AT_PPM         95                   // when absolute value of ppm is greater than this, flow counter is reset.
 
 // --------- 20 - Sequencer ---------
-#define SEQUENCE_OUTPUTS 0b000011  
+#define SEQUENCE_OUTPUTS 0b000000  
 #define SEQUENCE_UNIT 50
 #define SEQUENCE_m100    1 , 0b000011 , 3 , 0b000000 , 1 , 0b000011 , 3 , 0b000000 
 //#define SEQUENCE_m75     1 , 0b100000 , 1 , 0b000000 , 2 , 0b100000 , 2 , 0b000000
@@ -217,7 +217,8 @@
 
 
 // --------- xx - Reserved for developer. DEBUG must be activated here when we want to debug one or several functions in some other files. ---------
-//#define DEBUG
+#define DEBUG
+//#define DEBUG_SPORT_RECEIVED
 ///#define DEBUG_BLINK   // use by developper in order to blink the led without using uart for debugging
 
 
@@ -359,5 +360,3 @@ struct ONE_MEASUREMENT {
 
 
 #endif// End define OXS_CONFIG_ADVANCED_h
-
-
